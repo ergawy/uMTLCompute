@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6FDEB2232799A9740060973F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FDEB2222799A9740060973F /* main.m */; };
+		6FDEB2232799A9740060973F /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6FDEB2222799A9740060973F /* main.mm */; };
+		6FDEB22A2799A9DC0060973F /* mad_throughput.metal in Sources */ = {isa = PBXBuildFile; fileRef = 6FDEB2292799A9DC0060973F /* mad_throughput.metal */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +25,8 @@
 
 /* Begin PBXFileReference section */
 		6FDEB21F2799A9740060973F /* uMTLCompute */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = uMTLCompute; sourceTree = BUILT_PRODUCTS_DIR; };
-		6FDEB2222799A9740060973F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6FDEB2222799A9740060973F /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
+		6FDEB2292799A9DC0060973F /* mad_throughput.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = mad_throughput.metal; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +59,8 @@
 		6FDEB2212799A9740060973F /* uMTLCompute */ = {
 			isa = PBXGroup;
 			children = (
-				6FDEB2222799A9740060973F /* main.m */,
+				6FDEB2222799A9740060973F /* main.mm */,
+				6FDEB2292799A9DC0060973F /* mad_throughput.metal */,
 			);
 			path = uMTLCompute;
 			sourceTree = "<group>";
@@ -119,7 +122,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6FDEB2232799A9740060973F /* main.m in Sources */,
+				6FDEB22A2799A9DC0060973F /* mad_throughput.metal in Sources */,
+				6FDEB2232799A9740060973F /* main.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,6 +247,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 944X7DK43Y;
 				ENABLE_HARDENED_RUNTIME = YES;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Metal,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -253,6 +261,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 944X7DK43Y;
 				ENABLE_HARDENED_RUNTIME = YES;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Metal,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
