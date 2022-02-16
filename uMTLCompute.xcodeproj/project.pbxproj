@@ -7,11 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6FDEB2232799A9740060973F /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6FDEB2222799A9740060973F /* main.mm */; };
+		6F48F11727ABB3F400C3F731 /* matmul_tiled_main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6F48F11627ABB3F400C3F731 /* matmul_tiled_main.mm */; };
+		6F48F11C27AD10F300C3F731 /* matmul_tiled_fp32.metal in Sources */ = {isa = PBXBuildFile; fileRef = 6F48F11B27AD10F300C3F731 /* matmul_tiled_fp32.metal */; };
+		6FDEB2232799A9740060973F /* mad_throughput_main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6FDEB2222799A9740060973F /* mad_throughput_main.mm */; };
 		6FDEB22A2799A9DC0060973F /* mad_throughput.metal in Sources */ = {isa = PBXBuildFile; fileRef = 6FDEB2292799A9DC0060973F /* mad_throughput.metal */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		6F48F11227ABB3F400C3F731 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		6FDEB21D2799A9740060973F /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -24,12 +35,22 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		6FDEB21F2799A9740060973F /* uMTLCompute */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = uMTLCompute; sourceTree = BUILT_PRODUCTS_DIR; };
-		6FDEB2222799A9740060973F /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
+		6F48F11427ABB3F400C3F731 /* matmul */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = matmul; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F48F11627ABB3F400C3F731 /* matmul_tiled_main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = matmul_tiled_main.mm; sourceTree = "<group>"; };
+		6F48F11B27AD10F300C3F731 /* matmul_tiled_fp32.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = matmul_tiled_fp32.metal; sourceTree = "<group>"; };
+		6FDEB21F2799A9740060973F /* mad_throughput */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = mad_throughput; sourceTree = BUILT_PRODUCTS_DIR; };
+		6FDEB2222799A9740060973F /* mad_throughput_main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = mad_throughput_main.mm; sourceTree = "<group>"; };
 		6FDEB2292799A9DC0060973F /* mad_throughput.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = mad_throughput.metal; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		6F48F11127ABB3F400C3F731 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6FDEB21C2799A9740060973F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -40,10 +61,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6F48F11527ABB3F400C3F731 /* matmul */ = {
+			isa = PBXGroup;
+			children = (
+				6F48F11627ABB3F400C3F731 /* matmul_tiled_main.mm */,
+				6F48F11B27AD10F300C3F731 /* matmul_tiled_fp32.metal */,
+			);
+			path = matmul;
+			sourceTree = "<group>";
+		};
 		6FDEB2162799A9740060973F = {
 			isa = PBXGroup;
 			children = (
-				6FDEB2212799A9740060973F /* uMTLCompute */,
+				6FDEB2212799A9740060973F /* mad_throughput */,
+				6F48F11527ABB3F400C3F731 /* matmul */,
 				6FDEB2202799A9740060973F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -51,26 +82,44 @@
 		6FDEB2202799A9740060973F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6FDEB21F2799A9740060973F /* uMTLCompute */,
+				6FDEB21F2799A9740060973F /* mad_throughput */,
+				6F48F11427ABB3F400C3F731 /* matmul */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6FDEB2212799A9740060973F /* uMTLCompute */ = {
+		6FDEB2212799A9740060973F /* mad_throughput */ = {
 			isa = PBXGroup;
 			children = (
-				6FDEB2222799A9740060973F /* main.mm */,
+				6FDEB2222799A9740060973F /* mad_throughput_main.mm */,
 				6FDEB2292799A9DC0060973F /* mad_throughput.metal */,
 			);
-			path = uMTLCompute;
+			path = mad_throughput;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6FDEB21E2799A9740060973F /* uMTLCompute */ = {
+		6F48F11327ABB3F400C3F731 /* matmul */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6FDEB2262799A9740060973F /* Build configuration list for PBXNativeTarget "uMTLCompute" */;
+			buildConfigurationList = 6F48F11827ABB3F400C3F731 /* Build configuration list for PBXNativeTarget "matmul" */;
+			buildPhases = (
+				6F48F11027ABB3F400C3F731 /* Sources */,
+				6F48F11127ABB3F400C3F731 /* Frameworks */,
+				6F48F11227ABB3F400C3F731 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = matmul;
+			productName = matmul;
+			productReference = 6F48F11427ABB3F400C3F731 /* matmul */;
+			productType = "com.apple.product-type.tool";
+		};
+		6FDEB21E2799A9740060973F /* mad_throughput */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6FDEB2262799A9740060973F /* Build configuration list for PBXNativeTarget "mad_throughput" */;
 			buildPhases = (
 				6FDEB21B2799A9740060973F /* Sources */,
 				6FDEB21C2799A9740060973F /* Frameworks */,
@@ -80,9 +129,9 @@
 			);
 			dependencies = (
 			);
-			name = uMTLCompute;
+			name = mad_throughput;
 			productName = uMTLCompute;
-			productReference = 6FDEB21F2799A9740060973F /* uMTLCompute */;
+			productReference = 6FDEB21F2799A9740060973F /* mad_throughput */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -94,6 +143,9 @@
 				BuildIndependentTargetsInParallel = 1;
 				LastUpgradeCheck = 1300;
 				TargetAttributes = {
+					6F48F11327ABB3F400C3F731 = {
+						CreatedOnToolsVersion = 13.0;
+					};
 					6FDEB21E2799A9740060973F = {
 						CreatedOnToolsVersion = 13.0;
 					};
@@ -112,24 +164,64 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6FDEB21E2799A9740060973F /* uMTLCompute */,
+				6FDEB21E2799A9740060973F /* mad_throughput */,
+				6F48F11327ABB3F400C3F731 /* matmul */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+		6F48F11027ABB3F400C3F731 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F48F11727ABB3F400C3F731 /* matmul_tiled_main.mm in Sources */,
+				6F48F11C27AD10F300C3F731 /* matmul_tiled_fp32.metal in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6FDEB21B2799A9740060973F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				6FDEB22A2799A9DC0060973F /* mad_throughput.metal in Sources */,
-				6FDEB2232799A9740060973F /* main.mm in Sources */,
+				6FDEB2232799A9740060973F /* mad_throughput_main.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		6F48F11927ABB3F400C3F731 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 944X7DK43Y;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MTL_COMPILER_FLAGS = "-funroll-loops";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Metal,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		6F48F11A27ABB3F400C3F731 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 944X7DK43Y;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MTL_COMPILER_FLAGS = "-funroll-loops";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Metal,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		6FDEB2242799A9740060973F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -272,6 +364,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		6F48F11827ABB3F400C3F731 /* Build configuration list for PBXNativeTarget "matmul" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6F48F11927ABB3F400C3F731 /* Debug */,
+				6F48F11A27ABB3F400C3F731 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		6FDEB21A2799A9740060973F /* Build configuration list for PBXProject "uMTLCompute" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -281,7 +382,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6FDEB2262799A9740060973F /* Build configuration list for PBXNativeTarget "uMTLCompute" */ = {
+		6FDEB2262799A9740060973F /* Build configuration list for PBXNativeTarget "mad_throughput" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6FDEB2272799A9740060973F /* Debug */,
