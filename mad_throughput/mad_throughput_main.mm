@@ -51,6 +51,7 @@ int main(int argc, const char *argv[]) {
 
     // We need to populate src buffers using the CPU and then use them on the GPU, hence the
     // managed storage mode.
+    // TODO Check if MTLResourceHazardTrackingModeUntracked makes difference in performance.
     id<MTLBuffer> src0_buffer = [device newBufferWithLength:src0_size
                                                     options:MTLResourceStorageModeManaged];
     id<MTLBuffer> src1_buffer = [device newBufferWithLength:src1_size
