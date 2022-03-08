@@ -35,6 +35,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6F3D11A927D73DC9007EA7D7 /* matmul_tiled_fp32.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = matmul_tiled_fp32.h; path = matmul/matmul_tiled_fp32.h; sourceTree = SOURCE_ROOT; };
 		6F48F11427ABB3F400C3F731 /* matmul */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = matmul; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F48F11627ABB3F400C3F731 /* matmul_tiled_main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = matmul_tiled_main.mm; sourceTree = "<group>"; };
 		6F48F11B27AD10F300C3F731 /* matmul_tiled_fp32.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = matmul_tiled_fp32.metal; sourceTree = "<group>"; };
@@ -64,6 +65,7 @@
 		6F48F11527ABB3F400C3F731 /* matmul */ = {
 			isa = PBXGroup;
 			children = (
+				6F3D11A927D73DC9007EA7D7 /* matmul_tiled_fp32.h */,
 				6F48F11627ABB3F400C3F731 /* matmul_tiled_main.mm */,
 				6F48F11B27AD10F300C3F731 /* matmul_tiled_fp32.metal */,
 			);
